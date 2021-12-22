@@ -1,0 +1,17 @@
+<ul class="nav justify-content-center">
+    <li *ngIf="hiddenTabs.length > 0">
+        <a role="button" (click)="goPrev()" class="prev-button">
+            <img width="20" height="20" src="../../../../../assets/images/slider/right.png" alt="" aria-label="previous button">
+        </a>
+    </li>
+    <li class="nav-item" *ngFor="let tab of visibleTabs; first as isFirst" [ngClass]="{'no-border' : isFirst}">
+        <a class="nav-link" (click)="onTabClick(tab)" [ngClass]="{ 'active' : tab == selectedTab}" aria-current="page">
+            <h3>{{tab}}</h3>
+        </a>
+    </li>
+    <li *ngIf="hiddenTabs.length > 0">
+        <a role="button" (click)="goNext()" class="next-button">
+            <img width="20" height="20" src="../../../../../assets/images/slider/left.png" alt="" aria-label="previous button">
+        </a>
+    </li>
+</ul>

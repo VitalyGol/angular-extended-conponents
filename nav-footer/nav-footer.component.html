@@ -1,0 +1,27 @@
+<div class="container-fluid footer">
+    <div class="row bottom">
+        <div class="col links">
+            <h2>{{ caption }}</h2>
+            <ul class="links" *ngIf="bulletLinks && bulletLinks.length > 0">
+                <li *ngFor="let item of bulletLinks">
+                    <a [href]="item.url" rel="noopener" target="_blank">{{item.name}}</a>
+                </li>
+            </ul>
+            <ul class="link-bottom" *ngIf="bottomLinks && bottomLinks.length > 0">
+                <li *ngFor="let item of bottomLinks">
+                    <a [href]="item.url" rel="noopener" target="_blank">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center logo">
+            <img width="204" height="70" src="../../../../assets/images/logo.png" alt="שופרסל">
+        </div>
+    </div>
+    <div class="row disclamer">
+        <div class="col text-center">
+            {{ disclamer }}
+        </div>
+    </div>
+</div>

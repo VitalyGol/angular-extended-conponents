@@ -1,0 +1,23 @@
+<div *ngIf="sliderItems && sliderItems.length > 0" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li>
+            <a role="button" (click)="goPrev()" class="prev-button" aria-label="previous button">
+                <img width="20" height="20" src="../../../../../assets/images/slider/right.png" alt="">
+            </a>
+        </li>
+        <li *ngFor="let item of sliderItems" (click)="setActive(item.index)" data-slide-to="index" [ngClass]="{'active': item.index === activeIndex}">
+            <span></span>
+        </li>
+        <li>
+            <a role="button" (click)="goNext()" class="next-button">
+                <img  width="20" height="20" src="../../../../../assets/images/slider/left.png" alt="next button">
+            </a>
+        </li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let item of sliderItems" [ngClass]="{'active': item.index === activeIndex, 'pointer': item.link}" (click)="onItemClick(item.link)">
+            <img [src]="umbracoImg + item.image" class="d-none d-md-block w-100" alt="...">
+            <img height="140" [src]="umbracoImg + item.mobileImage" class="d-block d-md-none w-100" alt="...">
+        </div>
+    </div>
+</div>

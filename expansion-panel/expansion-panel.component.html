@@ -1,0 +1,15 @@
+<div class="expansion-panel-container" [ngClass]="{ 'opened' : isOpen}">
+    <div class="expansion-panel-header" (click)="toggle()">
+        <div class="panel-header">
+            <ng-content></ng-content>
+        </div>
+        <div class="panel-image">
+            <img class="open_image" src="../../../../../assets/images/expansion-panel/open.png" alt="פתח">
+            <img class="close_image" src="../../../../../assets/images/expansion-panel/close.png" alt="סגור">
+        </div>
+    </div>
+    <div class="expansion-panel-body">
+        <ng-content select="[body]"></ng-content>
+    </div>
+
+</div>

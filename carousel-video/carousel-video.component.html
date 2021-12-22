@@ -1,0 +1,25 @@
+<div *ngIf="sliderItems && sliderItems.length > 0" class="slider-video">
+    <h2>{{caption}}</h2>
+    <div *ngIf="sliderItems && sliderItems.length > 0" class="carousel slide" >
+        <ol *ngIf="countPages > 1" class="carousel-indicators">
+            <li>
+                <a role="button" (click)="goPrev()" class="prev-button" aria-label="previous button">
+                    <img width="20" height="20" src="../../../../../assets/images/slider/right.png" alt="">
+                </a>
+            </li>
+            <li *ngFor="let item of counter(countPages); let index = index;" (click)="setActive(index)" [ngClass]="{'active': index === activeIndex}">
+                <span></span>
+            </li>
+            <li>
+                <a role="button" (click)="goNext()" class="next-button">
+                    <img width="20" height="20" src="../../../../../assets/images/slider/left.png" alt="" alt="next button">
+                </a>
+            </li>
+        </ol>
+        <div class="carousel-inner text-center" [ngClass]="{ 'multiply-items' : countInRow > 1, 'indicator' : countPages > 1 }">
+            <div class="carousel-item" *ngFor="let item of sliderItems" [ngClass]="{'active': isActive(item.index)}">
+                <iframe [src]="item.videoUrl | safeUrl" [title]="item.title"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

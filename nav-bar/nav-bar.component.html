@@ -1,0 +1,51 @@
+<nav class="navbar user-select-none" [ngClass]="{ 'fixed-top' : fixed}">
+    <div class="container-fluid">
+        <button (click)="showSideMenu()" class="navbar-toggler d-block d-md-none" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="החלף ניווט">
+            <img src="../../../../assets/images/menu/hamburger-copy.png" alt="">
+        </button>
+        <a class="navbar-brand" href="#">
+            <img class="d-none d-md-block" width="140" height="76" [src]="navBrandImage.lgSrc" [alt]="navBrandImage.alt">
+            <img class="d-block d-md-none" width="70" height="39" [src]="navBrandImage.lgSrc" [alt]="navBrandImage.alt">
+        </a>
+        <ul *ngIf="rightMenu !== null" class="d-none d-md-block right-menu">
+            <li *ngFor="let item of rightMenu" routerLinkActive="active">
+                <a [routerLink]="item.link" >
+                    <div>{{ item.caption }}</div>
+                </a>
+            </li>
+        </ul>
+        <div class="spacer"></div>
+        <ul *ngIf="leftMenu !== null" class="d-none d-md-block left-menu">
+            <li *ngFor="let item of leftMenu; let last = last;" [ngClass]="{ 'last-item' : last}">
+                <a (click)="menuLeftItemClick(item)">
+                    <div><img width="16" height="17" src="../../../../assets/images/accessibility-copy.png" alt="header-icon">{{ item.caption }}</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div *ngIf="rightMenu !== null" class="full-width d-block d-md-none bottom-menu user-select-none" [ngClass]="{ 'mobile-fixed': fixed}">
+    <ul>
+        <li *ngFor="let item of rightMenu"  routerLinkActive="active">
+            <a [routerLink]="item.link">
+                <div>{{ item.caption }}</div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="side-menu user-select-none" [ngClass]="{ 'show' :  toggleMenu}">
+    <ul>
+        <li class="header-side-menu">
+            <button (click)="hideSideMenu()" class="navbar-toggler" type="button" aria-label="סגור תפריט">
+                <img src="../../../../assets/images/menu/close.png" alt="סגור תפריט">
+            </button>
+            <img width="70" height="39" [src]="navBrandImage.lgSrc" [alt]="navBrandImage.alt">
+        </li>
+        <li class="side-menu-rows" *ngFor="let item of leftMenu; let last = last;" [ngClass]="{ 'last-item' : last}">
+            <a (click)="menuLeftItemClick(item)">
+                <div><img width="16" height="17" src="../../../../assets/images/accessibility-copy.png" alt="header-icon">{{ item.caption }}</div>
+            </a>
+        </li>
+    </ul>
+</div>

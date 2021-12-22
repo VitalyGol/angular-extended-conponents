@@ -1,0 +1,61 @@
+.expansion-panel-container>.expansion-panel-body {
+  display: none;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.expansion-panel-container>.expansion-panel-header {
+  display: flex;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expansion-panel-container>.expansion-panel-header>.panel-header {
+  flex: 1;
+  font-size: 1.1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.expansion-panel-container>.expansion-panel-header>.panel-image {
+  position: relative;
+}
+
+.expansion-panel-container>.expansion-panel-header>.panel-image>.open_image {
+  position: absolute;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.expansion-panel-container>.expansion-panel-header>.panel-image>.close_image {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.expansion-panel-container.opened {
+    padding-bottom: 1rem;
+}
+
+.expansion-panel-container.opened>.expansion-panel-body {
+  display: block;
+}
+
+.expansion-panel-container.opened>.expansion-panel-header>.panel-image>.open_image {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.expansion-panel-container.opened>.expansion-panel-header>.panel-image>.close_image {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.expansion-panel-container.opened>.expansion-panel-header>.panel-header {
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}

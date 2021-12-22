@@ -1,0 +1,14 @@
+<div class="autocomplete-container" [ngClass]="{'height-auto': selectedResults.length > 0 }">
+    <div class="autocomplete-input">
+        <img src="../../../../../../assets/images/restorants/grey.png" alt="" (click)="onButtonSearch()">
+        <input type="text" class="form-control search-control" [placeholder]="placeholder" (keydown.enter)="onButtonSearch()"
+               (change)="onChange($event)" (keyup)="onSearch($event)" [value]="currentValue">
+    </div>
+    <div *ngIf="selectedResults.length > 0 && showResults" class="autocomplete-results">
+        <ul>
+            <li *ngFor="let item of selectedResults" (click)="onSelect(item)" >
+                <span *ngFor="let i of customSplit(item)" [ngClass]="{'fw-bold': i === currentValue }">{{i}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.footer h2 {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+ .footer .row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+
+.col.links {
+	position: relative;
+}
+
+.footer .bottom ul.links,
+.footer .bottom ul.link-bottom {
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer .bottom ul.link-bottom {
+  margin-top: 1rem;
+}
+
+.footer .bottom ul.links>li,
+.footer .bottom ul.link-bottom>li {
+  display: inline-flex;
+}
+
+.footer .bottom ul.link-bottom>li>a,
+.footer .bottom ul.links>li>a {
+  padding: 0.25rem 2rem;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.footer .bottom ul.link-bottom>li>a {
+  font-size: 18px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer .logo {
+  margin-top: 1rem;
+}
+
+.footer .disclamer {
+  margin-top: 0.5rem;
+  font-size: 14px;
+}
+
+ul.links {
+  width: 100%;
+}
+
+.footer .bottom ul.links>li:nth-last-child(4) {
+  border-left: none;
+}
+
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (max-width: 767.98px) {
+  ul.links > li {
+    width: 100%;
+  }
+
+  ul.links > li > a { 
+	  margin: 0 auto;
+	  font-size: 14px !important;
+  }
+
+  ul.link-bottom > li {
+    width: 100%;
+  }
+
+  ul.link-bottom > li > a { 
+	  margin: 0 auto;
+	  font-size: 14px !important;
+  }
+}

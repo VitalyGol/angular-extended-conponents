@@ -1,0 +1,49 @@
+h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #2f416e;
+  margin: 0.25rem 0.5rem;
+}
+
+.nav-link {
+  padding: 0 1rem;
+}
+
+@media (max-width: 991.98px) {
+  h3 {
+    font-size: 18px;
+    margin: 0.25rem;
+  }
+  .nav-link {
+    padding: 0 0.25rem;
+  }
+}
+
+.nav {
+  margin: 15px 0;
+  align-items: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+a.active>h3 {
+  font-weight: bold;
+}
+
+ul>li {
+  display: inline-flex;
+}
+
+ul>li.nav-item {
+  border-right: 2px solid #2f416e;
+}
+
+ul>li.nav-item.no-border {
+  border-right: 0;
+}
+
+

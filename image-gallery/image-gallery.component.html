@@ -1,0 +1,19 @@
+<ul class="gallery-content">
+    <li *ngIf="countPages > 0">
+        <a role="button" (click)="goPrevContent()" class="prev-button" aria-label="previous button">
+            <img width="20" height="20" src="../../../../../assets/images/slider/right.png" alt="">
+        </a>
+    </li>
+    <li class="container-results">
+        <div class="text-center">
+            <div *ngFor="let item of galleryItems; let index = index;" class="resto-box" (click)="onItemClick(item)" [ngClass]="{ 'active' : isActive(index)}">
+                <img [src]="umbracoImg + item.image" [alt]="item.name" width="142" height="32">
+            </div>
+        </div>
+    </li>
+    <li *ngIf="countPages > 0">
+        <a role="button" (click)="goNextContent()" class="next-button">
+            <img width="20" height="20" src="../../../../../assets/images/slider/left.png" alt="" aria-label="previous button">
+        </a>
+    </li>
+</ul>
